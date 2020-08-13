@@ -92,6 +92,12 @@ function dragSegment(i,  xin,  yin) {
 }
 
 function drawLine(x1, y1, x2, y2, color, width) {
+    
+    var imageObj = new Image();
+    imageObj.onload = function(){
+      pattern1 = ctx.createPattern(imageObj, "repeat");
+  }
+  
   ctx.save();
   
   ctx.strokeStyle = color;
@@ -104,3 +110,4 @@ function drawLine(x1, y1, x2, y2, color, width) {
   
   ctx.restore();
 }
+imageObj.src = "../snakeskin.jpg";
